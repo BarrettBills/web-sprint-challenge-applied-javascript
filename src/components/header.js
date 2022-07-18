@@ -38,6 +38,15 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+  let currentDate = new Date().toJSON().slice(0, 10);
+
+  const mainElem = document.querySelector(selector);
+  const headerElem = Header('My Origin', currentDate, 'What Does Temp Mean?');
+
+  console.log('mainElem\n\n', mainElem);
+  console.log('headerElem\n\n', headerElem);
+
+  mainElem.appendChild(headerElem);
 }
 
 export { Header, headerAppender }
